@@ -34,6 +34,10 @@ a {
   color: white;
 }
 
+img {
+  width: 100%;
+}
+
 /* color palette */
 :root {
   --color-black: hsl(0, 0%, 0%);
@@ -56,11 +60,11 @@ h3 {
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   margin: 0;
+  font-weight: lighter;
 }
 
 h1 {
   font-size: 4rem;
-  font-weight: lighter;
   text-align: left;
   line-height: 1.6ch;
 }
@@ -148,5 +152,53 @@ header .nav-links {
   header .nav-links {
     display: flex;
     gap: 2rem;
+  }
+}
+
+/* brand section */
+.brand-info {
+  max-width: 800px;
+  margin: 8rem 2.5rem;
+}
+
+.brand-info h2 {
+  margin-top: 4.5rem;
+}
+
+.brand-info p {
+  padding: 0 4rem;
+  line-height: 2.2ch;
+}
+
+.content-section {
+  text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  .brand-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brand-info img {
+    min-width: 400px;
+    width: 130%;
+  }
+
+  .brand-info h2 {
+    margin: 0;
+  }
+
+  .brand-info p {
+    padding: 0;
+  }
+
+  .content-section {
+    width: 115%;
+    max-width: 600px;
+    text-align: left;
+    background-color: white;
+    transform: translate(-10%, 35%);
+    padding: 4rem;
   }
 }
