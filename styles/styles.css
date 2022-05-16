@@ -10,10 +10,34 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  min-width: 360px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
 /* color palette */
 :root {
   --color-black: hsl(0, 0%, 0%);
-  --color-white: hsl(0, 0%, 100%);
+  --color-white: hsla(0, 0%, 100%, 0.88);
   --color-gray: hsl(0, 0%, 41%);
   --color-text: hsl(0, 0%, 55%);
 }
@@ -23,6 +47,7 @@ body {
   color: var(--color-text);
   font-size: 1.5rem;
   text-align: center;
+  font-family: "Alata", sans-serif;
 }
 
 h1,
@@ -30,12 +55,14 @@ h2,
 h3 {
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
+  margin: 0;
 }
 
 h1 {
-  /* color: var(--color-white); */
-  font-size: 3.3rem;
+  font-size: 4rem;
+  font-weight: lighter;
   text-align: left;
+  line-height: 1.6ch;
 }
 
 h2 {
@@ -54,10 +81,72 @@ h3 {
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 
   h2 {
     font-size: 3.4rem;
+  }
+}
+
+/* header */
+header {
+  color: var(--color-white);
+  background: url(/images/mobile/image-hero.jpg) no-repeat center;
+  background-size: cover;
+}
+
+header > div {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2.2rem 0;
+}
+
+.logo > img {
+  width: 140px;
+}
+
+header .nav-links {
+  display: none;
+}
+
+.hero-section {
+  max-width: 450px;
+  border: 2px solid var(--color-white);
+  padding: 2rem;
+  margin: auto 2.5rem;
+}
+
+@media screen and (min-width: 450px) {
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.579), rgba(0, 0, 0, 0.579)),
+      url(/images/desktop/image-hero.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  header > div {
+    height: 450px;
+  }
+
+  .hero-section {
+    padding-right: 5rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  header .hamburger-icon {
+    display: none;
+  }
+
+  header .nav-links {
+    display: flex;
+    gap: 2rem;
   }
 }
