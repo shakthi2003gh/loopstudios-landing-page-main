@@ -74,7 +74,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+.expanded .nav-links {
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   margin: 0;
@@ -129,6 +130,15 @@ header nav {
   justify-content: space-between;
   align-items: center;
   padding: 4rem 0 0;
+  position: relative;
+}
+
+.header-icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
 }
 
 .logo > img {
@@ -137,6 +147,51 @@ header nav {
 
 header .nav-links {
   display: none;
+}
+
+.expanded div {
+  height: 26vh;
+}
+
+.expanded nav {
+  flex-direction: column;
+}
+
+.expanded::after {
+  position: fixed;
+  content: "";
+  width: 100%;
+  min-width: 360px;
+  height: 500vh;
+  background: black;
+  inset: 0;
+  z-index: 4;
+}
+
+.expanded .hamburger-icon {
+  display: none;
+}
+
+.close-icon {
+  display: none;
+}
+
+.expanded .close-icon {
+  display: block;
+}
+
+.expanded .nav-links {
+  display: block;
+  font-size: 2.2rem;
+  line-height: 3.5ch;
+  margin: auto;
+  margin-left: 0;
+  text-align: left;
+  z-index: 5;
+}
+
+.expanded a {
+  color: rgba(255, 255, 255, 0.588);
 }
 
 .hero-section {
@@ -248,7 +303,7 @@ header .nav-links {
 
 h3:hover {
   color: var(--color-black);
-  z-index: 5;
+  z-index: 3;
 }
 
 .creations > h3:hover::before {
