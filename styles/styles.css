@@ -107,7 +107,7 @@ header > div {
   height: 600px;
 }
 
-nav {
+header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -357,5 +357,66 @@ header .nav-links {
     grid-area: button;
     justify-self: end;
     margin: 0 0 0 auto;
+  }
+}
+
+/* footer */
+footer {
+  background-color: var(--color-black);
+}
+
+.footer {
+  display: grid;
+  place-items: center;
+  gap: 3rem;
+  padding: 5rem 2rem;
+}
+
+.footer .nav-links {
+  display: grid;
+  gap: 2rem;
+}
+
+.social-media-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.social-media-links > img {
+  width: 40px;
+}
+
+.copyrights {
+  margin: 0;
+}
+
+@media screen and (min-width: 400px) {
+  .footer .nav-links {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer .logo {
+    margin-right: auto;
+  }
+
+  .footer .nav-links {
+    margin-right: auto;
+    order: 1;
+  }
+
+  .social-media-links {
+    margin-left: auto;
+  }
+
+  .copyrights {
+    text-align: right;
+    margin-left: auto;
+    order: 1;
   }
 }
